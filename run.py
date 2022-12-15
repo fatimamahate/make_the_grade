@@ -84,11 +84,7 @@ def target_check(student,sheet_name,field_name):
                 print('Target updated! \n')
                 print(f'You need to achieve at least {user_target_input}% on each assessment')
                 check = True
-                break
-    
-    # user_assessment_no_input= input('What is the assessment number?') 
-    # if user_assessment_no_input != int(#assessment number)+1:
-    #     print(f'Are you sure? The last assessment number was {last_key}')              
+                break            
     
 def assessment_check(user_input,sheet_name,field_name):
     """
@@ -129,7 +125,6 @@ def assessment_check(user_input,sheet_name,field_name):
                 temp_delete = correct_sheet.delete_rows(user_pos)
                 update_student = list(current_user.values())
                 print(update_student)
-                ##In here create the a lsit of values for the current user and append
                 correct_sheet.append_row(update_student)
                 print('Target updated! \n')
                 print(f'You need to achieve at least {user_target_input}% on each assessment')
@@ -145,11 +140,13 @@ def assessment_check(user_input,sheet_name,field_name):
                 temp_delete = correct_sheet.delete_rows(user_pos)
                 update_student = list(current_user.values())
                 print(update_student)
-                ##In here create the a lsit of values for the current user and append
                 correct_sheet.append_row(update_student)
+                print(current_user)
                 print('Grade updated! \n')
-                
                 check=True
+
+# def new_grade_aim():
+
     
 
         
@@ -158,7 +155,9 @@ def assessment_check(user_input,sheet_name,field_name):
 TO-DO
 add validation to grade
 work out how much the user requires on the next exam and work out average
-
+take out all useless print values
+clean up any print values by adding \n
+add below into its own function and run function
 """
 user_school_input = open_correct_sheet('school_number', 'Number:', 'What is your School ID? \n')
 user_user_input = open_correct_sheet(user_school_input, 'user number', 'What is your User ID? \n')
