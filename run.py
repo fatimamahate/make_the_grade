@@ -60,7 +60,9 @@ def assessment_check(student,sheet_name,field_name):
         while not check:
             user_target_input=input('What is your target % for the end of the year (Enter a percentage)? \n')
             current_user['target'] = user_target_input
-            if int(user_target_input) <= 0:
+            if not user_target_input.isdigit():
+                print('insert a number')
+            elif int(user_target_input) <= 0:
                 print('Minimum target is 1% try again')
                 continue
             elif int(user_target_input) > 100:
@@ -89,7 +91,6 @@ def assessment_check(student,sheet_name,field_name):
     
 """
 TO-DO
-Create validation check for target percentage
 add user assessment func
 
 """
