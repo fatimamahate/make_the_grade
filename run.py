@@ -62,6 +62,7 @@ def target_check(student,sheet_name,field_name):
             current_user['target'] = user_target_input
             if not user_target_input.isdigit():
                 print('insert a number')
+                continue
             elif int(user_target_input) <= 0:
                 print('Minimum target is 1% try again')
                 continue
@@ -93,22 +94,75 @@ def assessment_check(user_input,sheet_name,field_name):
     """
     This function will ask user to input their score for a specific assessment number
     """
-    user_assessment_no_input = input('What assessement number is this?')
-    if not user_assessment_no_input.isdigit():
-        print('Insert a number')
-    elif int(user_assessment_no_input) <6 or int(user_assessment_no_input)<1:
-        print('Insert a number from 1 to 6')
-    else:
-        print('leg')
-    user_score_input=input('What is your score (out of 100)?')
+    correct_sheet = SHEET.worksheet(sheet_name)
+    sheet_info = correct_sheet.get_all_records()
+    str_values = [str(record[field_name]) for record in sheet_info]
+    print(str_values)
+    check=False
+    while not check:
+        user_assessment_no_input = input('What assessement number is this?')
+        if not user_assessment_no_input.isdigit():
+            print('Insert a number')
+        elif int(user_assessment_no_input) >6 or int(user_assessment_no_input)<1:
+            print('Insert a number from 1 to 6')
+        else:
+            print('Thank you for a valid assessment number')
+        for school in sheet_info:
+            for value in school.values():
+                if str(value) == user_input:
+                    current_user = school
+                    print(current_user)
+                    break
+        user_assessment_before = int(user_assessment_no_input) - 1
+        if user_assessment_before != 0:
+            if current_user[f'{user_assessment_before}'] == '':
+                print(f'There is not data for {user_assessment_before}, are you sure this assessment number is correct?')
+                continue
+            else: 
+                user_score_input = input('What is your score (out of 100)?')
+                current_user[f'{user_assessment_no_input}'] = user_score_input
+                print('Updating target...\n')
+                no_of_rows = len(sheet_info)
+                print(no_of_rows)
+                user_pos=str_values.index(f'{user_input}') + 2 #We +2 to take into account header and index starting from 0
+                print(user_pos)
+                temp_delete = correct_sheet.delete_rows(user_pos)
+                update_student = list(current_user.values())
+                print(update_student)
+                ##In here create the a lsit of values for the current user and append
+                correct_sheet.append_row(update_student)
+                print('Target updated! \n')
+                print(f'You need to achieve at least {user_target_input}% on each assessment')
+                check=True
+        else:
+                user_score_input = input('What is your score (out of 100)?')
+                current_user[f'{user_assessment_no_input}'] = user_score_input
+                print('Updating target...\n')
+                no_of_rows = len(sheet_info)
+                print(no_of_rows)
+                user_pos=str_values.index(f'{user_input}') + 2 #We +2 to take into account header and index starting from 0
+                print(user_pos)
+                temp_delete = correct_sheet.delete_rows(user_pos)
+                update_student = list(current_user.values())
+                print(update_student)
+                ##In here create the a lsit of values for the current user and append
+                correct_sheet.append_row(update_student)
+                print('Grade updated! \n')
+                
+                check=True
+    
 
+        
+    
 """
 TO-DO
-add user assessment func
+add validation to grade
+work out how much the user requires on the next exam and work out average
 
 """
 user_school_input = open_correct_sheet('school_number', 'Number:', 'What is your School ID? \n')
 user_user_input = open_correct_sheet(user_school_input, 'user number', 'What is your User ID? \n')
 check_student_info = target_check(user_user_input, user_school_input, 'user number')
+check_student_assessment_info = assessment_check(user_user_input, user_school_input, 'user number')
 
 
