@@ -36,7 +36,7 @@ def open_correct_sheet(sheet_name,field_name,input_question):
             check = True
     return user_input
 
-def assessment_check(student,sheet_name,field_name):
+def target_check(student,sheet_name,field_name):
     """
     This takes school number and user number from above
     Checks if user has a target value and total number of assessments
@@ -51,11 +51,11 @@ def assessment_check(student,sheet_name,field_name):
                 current_user = school
                 print(current_user)
                 break
-    last_key = list(school)[-1]
+    target_value = current_user['target']
     print('check')
     print(current_user)
     print('check')
-    if last_key == 'target':
+    if target_value == '':
         check = False
         while not check:
             user_target_input=input('What is your target % for the end of the year (Enter a percentage)? \n')
@@ -89,6 +89,19 @@ def assessment_check(student,sheet_name,field_name):
     # if user_assessment_no_input != int(#assessment number)+1:
     #     print(f'Are you sure? The last assessment number was {last_key}')              
     
+def assessment_check(user_input,sheet_name,field_name):
+    """
+    This function will ask user to input their score for a specific assessment number
+    """
+    user_assessment_no_input = input('What assessement number is this?')
+    if not user_assessment_no_input.isdigit():
+        print('Insert a number')
+    elif int(user_assessment_no_input) <6 or int(user_assessment_no_input)<1:
+        print('Insert a number from 1 to 6')
+    else:
+        print('leg')
+    user_score_input=input('What is your score (out of 100)?')
+
 """
 TO-DO
 add user assessment func
@@ -96,6 +109,6 @@ add user assessment func
 """
 user_school_input = open_correct_sheet('school_number', 'Number:', 'What is your School ID? \n')
 user_user_input = open_correct_sheet(user_school_input, 'user number', 'What is your User ID? \n')
-check_student_info = assessment_check(user_user_input, user_school_input, 'user number')
+check_student_info = target_check(user_user_input, user_school_input, 'user number')
 
 
