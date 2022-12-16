@@ -84,7 +84,9 @@ def target_check(student,sheet_name,field_name):
                 print('Target updated! \n')
                 print(f'You need to achieve at least {user_target_input}% on each assessment')
                 check = True
-                break            
+                break       
+
+         
     
 def assessment_check(user_input,sheet_name,field_name):
     """
@@ -147,13 +149,13 @@ def assessment_check(user_input,sheet_name,field_name):
                         check=True
         else:
             #if user inputs 1, then no need to check any other data has been written previously
-            check_two == False
+            check_two = False
             while not check_two:
                 user_score_input = input('What is your score (out of 100)?')
                 if not user_score_input.isdigit():
                     print('Please insert a number')
                     continue
-                elif int(user_score_input) > 100 or int(user_score_input) > 0:
+                elif int(user_score_input) > 100 or int(user_score_input) < 0:
                     print('Please insert a valid score')
                 else:
                     current_user[f'{user_assessment_no_input}'] = user_score_input
@@ -171,9 +173,9 @@ def assessment_check(user_input,sheet_name,field_name):
                     print('Grade updated! \n')
                     check_two=True
                     check=True
-            return 
+    return user_assessment_no_input
 
-def new_grade_aim():
+def new_grade_aim(assessment_number,user_input,sheet_name,field_name):
     """
     The new_grade_aim function takes the users data from assessment 1 up to 6 and finds the average grade so far
     Then it calculates, how much you need for the next assessment to reach target if the last assessment is not the sixth one.
@@ -182,14 +184,40 @@ def new_grade_aim():
     If it meets target, a message says well done for reaching target!
     If it exceeds target, a message says well done for exceed target!
     """
+    correct_sheet = SHEET.worksheet(sheet_name)
+    sheet_info = correct_sheet.get_all_records()
+    str_values = [str(record[field_name]) for record in sheet_info]
+    print(str_values)
+    for school in sheet_info:
+        for value in school.values():
+            if str(value) == user_input:
+                current_user = school
+                print(current_user)
+                break
+    student_values_dict = current_user.values()
+    student_values_list = list(student_values_dict)
+    print(student_values_list)
+    student_values_list.reverse()
+    print(student_values_list)
+    student_values = student_values_list[:6]
+    print(student_values)
+    num = 0
+    for i in student_values:
+        if i == '':
+            continue
+        else:
+            num += i
 
-    
+    average = num/int(assessment_number)
+    print(num)
+    print(average)
+    print(current_user['target'])
+
 
         
     
 """
 TO-DO
-work out how much the user requires on the next exam and work out average
 take out all useless print values
 clean up any print values by adding \n
 add below into its own function and run function
@@ -198,5 +226,6 @@ user_school_input = open_correct_sheet('school_number', 'Number:', 'What is your
 user_user_input = open_correct_sheet(user_school_input, 'user number', 'What is your User ID? \n')
 check_student_info = target_check(user_user_input, user_school_input, 'user number')
 check_student_assessment_info = assessment_check(user_user_input, user_school_input, 'user number')
+score_average = new_grade_aim(check_student_assessment_info,user_user_input, user_school_input, 'user number')
 
 
