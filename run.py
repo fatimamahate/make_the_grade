@@ -67,10 +67,10 @@ def target_check(student, sheet_name, field_name):
                 print('insert a number')
                 continue
             elif int(user_target_input) <= 0:
-                print('Minimum target is 1% try again')
+                print('Minimum target is 1% try again \n')
                 continue
             elif int(user_target_input) > 100:
-                print('Target cannot be larger than 100% try again')
+                print('Target cannot be larger than 100% try again \n')
                 continue
             else:
                 print('Updating target...\n')
@@ -111,7 +111,7 @@ def assessment_check(user_input,sheet_name,field_name):
                 break
     check=False
     while not check:
-        user_assessment_no_input = input('What assessment number is this?')
+        user_assessment_no_input = input('What assessment number is this? \n')
         if not user_assessment_no_input.isdigit():
             print('Insert a number')
             continue
@@ -133,15 +133,15 @@ def assessment_check(user_input,sheet_name,field_name):
             else:
                 check_two = False
                 while not check_two:
-                    user_score_input = input('What is your score (out of 100)?')
+                    user_score_input = input('What is your score (out of 100)? \n')
                     if not user_score_input.isdigit():
-                        print('Please insert a number')
+                        print('Please insert a number \n')
                         continue
                     elif int(user_score_input) > 100 or int(user_score_input) < 0:
-                        print('Please insert a valid score')
+                        print('Please insert a valid score \n')
                     else:
                         current_user[f'{user_assessment_no_input}'] = user_score_input
-                        print('Updating target...\n')
+                        print('Updating grade...\n')
                         no_of_rows = len(sheet_info)
                         print(no_of_rows)
                         user_pos=str_values.index(f'{user_input}') + 2 
@@ -161,7 +161,7 @@ def assessment_check(user_input,sheet_name,field_name):
             #written previously
             check_two = False
             while not check_two:
-                user_score_input = input('What is your score (out of 100)?')
+                user_score_input = input('What is your score (out of 100)? \n')
                 if not user_score_input.isdigit():
                     print('Please insert a number')
                     continue
@@ -185,7 +185,7 @@ def assessment_check(user_input,sheet_name,field_name):
                     check=True
     return user_assessment_no_input
 
-def new_grade_aim(assessment_number,user_input,sheet_name,field_name):
+def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
     """
     The new_grade_aim function takes the users data from assessment 1 up to 6 
     and finds the average grade so far
