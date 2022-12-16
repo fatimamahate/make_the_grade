@@ -238,7 +238,7 @@ def main():
     user_school_input = open_correct_sheet('school_number', 'Number:', 'What is your School ID? \n')
     user_user_input = open_correct_sheet(user_school_input, 'user number', 'What is your User ID? \n')
     check_student_info = target_check(user_user_input, user_school_input, 'user number')
-    check_student_assessment_info = assessment_check(user_user_input, user_school_input, 'user number')
-    score_average = new_grade_aim(check_student_assessment_info,user_user_input, user_school_input, 'user number')
+    check_assessment_info = assessment_check(user_user_input, user_school_input, 'user number')
+    score_average = new_grade_aim(check_assessment_info,user_user_input, user_school_input, 'user number')
 
 main()
