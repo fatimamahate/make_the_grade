@@ -222,6 +222,14 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
 
     average = num/int(assessment_number)
     print(num)
+    if assessment_number == '6':
+        if average == current_user['target']:
+            print('Well done, you\'ve acheived you\'re target')
+        elif average > current_user['target']:
+            print('You have exceed the target! Well done!')
+        else: 
+        
+
     print(average)
     print(current_user['target'])
 
