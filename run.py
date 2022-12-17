@@ -195,7 +195,7 @@ def assessment_check(user_input, sheet_name, field_name):
         return user_assessment_input
 
 
-def new_grade_aim(assessment_number, user_input, sheet_name):
+def new_grade_aim(user_input, sheet_name):
     """
     The new_grade_aim function takes the users data from assessment 1 up to 6
     and finds the average grade
@@ -220,15 +220,14 @@ def new_grade_aim(assessment_number, user_input, sheet_name):
             else:
                 num += i
 
-        average = num/int(assessment_number)
-        if assessment_number == '6':
-            if average == current_user['target']:
-                print('Well done, you\'ve acheived you\'re target \n')
-            elif average > current_user['target']:
-                print('You have exceed the target! Well done! \n')
-            else:
-                print('You have not reached the target yet, '
-                      'try again next year \n')
+        average = num/6
+        if average == current_user['target']:
+            print('Well done, you\'ve acheived you\'re target \n')
+        elif average > current_user['target']:
+            print('You have exceed the target! Well done! \n')
+        else:
+            print('You have not reached the target yet, '
+                  'try again next year \n')
 
 
 def data_check(user_input, sheet_name):
@@ -261,12 +260,9 @@ def main():
         user_school_input, 'user number', 'What is your User ID? \n   ')
     target_check(user_user_input, user_school_input, 'user number')
     data_check(user_user_input, user_school_input)
-    check_assessment_info = assessment_check(
-        user_user_input, user_school_input, 'user number')
+    assessment_check(user_user_input, user_school_input, 'user number')
     data_check(user_user_input, user_school_input)
-    new_grade_aim(
-        check_assessment_info, user_user_input,
-        user_school_input)
+    new_grade_aim(user_user_input, user_school_input)
 
 
 main()
