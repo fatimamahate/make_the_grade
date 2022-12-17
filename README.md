@@ -1,31 +1,77 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Make The Grade</h1>
 
-Welcome fatimamahate,
+* [Live project link](https://make-the-grade.herokuapp.com/)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+* [Repository Link](https://github.com/fatimamahate/make_the_grade)
 
-## Reminders
+Make The Grade is an application useful for students and teachers. Students (or users as in the code) can input their target grade and scores for the latest assessment. Make The Grade is designed so that students input their scores as soon as they recieve them. The application can (if needed for user) work out the average score needed on each remaining exam to meet their target score. This is especially useful for students working below their average grade. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Teachers receive a School ID which is unique to that particular school. The School ID can be shared with students along with their own unique User ID. Both the School ID and User ID are meant to be kept secret so only those who schools who have 'subscribed' to the Make The Grade service can access it. Furthermore, this ensures data cannot be mixed about and people who are not 'subscribers' of the service cannot access the service with random numbers. 
 
-## Creating the Heroku app
+All of the data regarding each student- as well as each school is stored in Google Sheets. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Contents
 
-1. `heroku/python`
-2. `heroku/nodejs`
+ * User Experience
+* Features
+* Design
+ * Technologies Used
+* Testing
+ * Deployment
+ * Credits
+ * Acknowledgements
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## User Experience
+Users of the application should be able to:
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* Input correct, valid ID's
+* Input target (if user hasn't already done so)
+* Check what data is already in the database
+* Input assessment data in a consecutive manner
+* Find out how much they need iin each of the remaining exams to reach target. 
+* Find out if they have reached/exceeded target.
 
-Connect your GitHub repository and deploy as normal.
+## Features
 
-## Constraints
+## Design
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Technologies Used
+* [Python](https://www.python.org/)
 
------
-Happy coding!
+## Testing
+
+## Deployment
+### Clone a repository
+* To clone a repository, go to the GitHub repository.
+* Click on Code
+* Copy the link
+* Open GitBash
+* Type in git clone, copy your URL and press enter.
+
+### Deploy to Heroku
+* Create login with Heroku
+* Click on 'Create New App'
+* Name your file- name must be unique
+* Select the region that you are in
+* Navigate to and click on the settings tab
+* Navigate to the Config vars section of page.
+* In the 'Key' Field, type CREDS
+* Then copy requirments.txt file contents into Value field.
+* Then click 'Add'
+* Add another, with 'Key' field as PORT and the 'value' as 8000
+* Click on 'Add buildpack"
+* Select 'Python' and then save changes.
+* Repeat last two steps but this time select node.js and then save changes
+* Navigate to deply section at the top
+* Select Github (if it is your first time using heroku you may need to verify your account by typing in your password.)
+* Look for the github repository with the code
+* Select automatic deploy
+
+### Use the Google Sheets API
+
+## Credits
+In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
+
+## Acknowledgements
+Thank you to my mentor, Brian Macharia, who provided invaluable, constructive feedback on this PP3 project. 
+Also, thank you to Anna Greaves from Code Institute for her Love Sandwiches project, which allowed me to learn so much about python.
