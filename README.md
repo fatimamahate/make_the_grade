@@ -75,8 +75,29 @@ Users of the application should be able to:
 
 #### API
 * Visit [the Google Cloud Platform](https://console.cloud.google.com/getting-started) website.
-* If not already, create an account
-* 
+* If not already, create an account.
+* Select 'Select a project'
+* Select new project
+* Name your porject
+* Click 'Select Project'
+* On the side, click on 'APIs and services' and then click on 'Library'
+* Search for Google Drive in the search bar 
+* Click on Google Drive API
+* Click on 'Enable'
+* Click on 'Create Credentials'
+* For the following questions choose the answers that follow the question
+1. Which API are you using?
+Google Drive API
+2. What data will you be accessing?
+Application Data
+3. Are you planning to use this API with Compute Engline, Kubernetes Engine, App Engine or Cloud Functions?
+No, I am not using them
+* Then click on 'Next'
+* Type in a service account name - try the name of the project
+* Click on 'create'
+* In the role dropdown, select 'Basic' then 'Editor'
+* Click 'continue'
+* Then click 'done'
 
 ## Credits
 In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
