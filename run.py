@@ -102,7 +102,7 @@ def assessment_check(user_input, sheet_name, field_name):
     check = False
     while not check:
         data_input = input('\n Are you adding a score? (Press 1 for yes and 0 '
-                           'for no) \n Please note that you cannot add a '
+                           'for no) \n Please note you cannot add a '
                            'score once all 6 assessments have been '
                            'completed.\n   ')
         if data_input == '1':
@@ -191,7 +191,7 @@ def assessment_check(user_input, sheet_name, field_name):
         elif data_input == '0':
             check = True
         else:
-            print('Please enter either 1 for yes or 0 for no')
+            print('Please enter either 1 for yes or 0 for no \n')
 
 
 def new_grade_aim(user_input, sheet_name):
