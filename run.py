@@ -152,7 +152,6 @@ def assessment_check(user_input, sheet_name, field_name):
                                 f'{user_assessment_input}'
                                         ] = user_score_input
                             print('Updating score...\n')
-                            no_of_rows = len(sheet_info)
                             user_pos = str_values.index(f'{user_input}') + 2
                             # We +2 to take into account header and index
                             # from 0
@@ -182,12 +181,9 @@ def assessment_check(user_input, sheet_name, field_name):
                             f'{user_assessment_input}'
                                     ] = user_score_input
                         print('Updating score...\n')
-                        no_of_rows = len(sheet_info)
-                        print(no_of_rows)
                         user_pos = str_values.index(f'{user_input}') + 2
                         # We +2 to take into account header and index starting
                         # from 0
-                        print(user_pos)
                         correct_sheet.delete_rows(user_pos)
                         update_student = list(current_user.values())
                         correct_sheet.append_row(update_student)
