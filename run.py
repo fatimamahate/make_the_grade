@@ -25,7 +25,6 @@ def open_correct_sheet(sheet_name, field_name, input_question):
     correct_sheet = SHEET.worksheet(sheet_name)
     sheet_info = correct_sheet.get_all_records()
     str_values = [str(record[field_name]) for record in sheet_info]
-    print(str_values)
     check = False
     while not check:
         user_input = input(input_question).strip()
