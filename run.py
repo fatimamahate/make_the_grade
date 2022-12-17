@@ -239,11 +239,11 @@ def data_check(user_input, sheet_name):
             if str(value) == user_input:
                 current_user = user
                 name = current_user['name']
-                print(f'The data we currently have for {name} is ...')
+                print(f'The data we currently have for {name} is ... \n')
                 print(current_user)
                 break
     if current_user['6'] != '':
-        print('Thank you for using Make The Grade.')
+        print('Thank you for using Make The Grade. \n')
         return
 
 
