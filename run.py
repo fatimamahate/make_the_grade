@@ -218,13 +218,11 @@ def new_grade_aim(user_input, sheet_name):
                 continue
             else:
                 num += i
-        print(num)
         average = num/6
-        print(average)
         if average == current_user['target']:
             print('Well done, you\'ve acheived you\'re target \n')
         elif average > current_user['target']:
-            print('You have exceed the target! Well done! \n')
+            print('You have exceeded the target! Well done! \n')
         else:
             print('You have not reached the target yet, '
                   'try again next year \n')
