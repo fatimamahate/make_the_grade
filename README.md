@@ -68,6 +68,15 @@ Users of the application should be able to:
 * Select automatic deploy
 
 ### Use the Google Sheets API
+#### Creating a Google Sheet
+* Visit [the Google Sheets](https://docs.google.com/spreadsheets/u/0/) website and if needed create an account
+* Navigate and click on blank to create a blank worksheet
+* Insert your data into the cells on the sheet
+
+#### API
+* Visit [the Google Cloud Platform](https://console.cloud.google.com/getting-started) website.
+* If not already, create an account
+* 
 
 ## Credits
 In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
