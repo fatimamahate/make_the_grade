@@ -251,8 +251,20 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
             print('Well done, you\'ve acheived you\'re target')
         elif average > current_user['target']:
             print('You have exceed the target! Keep it up')    
-    print(average)
-    print(current_user['target'])
+        else:
+            assessment_remain = 0
+            assessment_complete_score = 0
+            assessment_complete = 0
+            for i in student_values:
+                if i == '':
+                    assessment_remain += 1
+                else:
+                    assessment_complete_score += int(i)
+                    assessment_complete += 1
+            new_aim = (
+                        current_user['target'] * 6 - assessment_complete_score
+                        )/assessment_remain
+            if int(new_aim) > 100:
 
 
 def main():
@@ -260,9 +272,9 @@ def main():
     Main function where everything is run
     """
     user_school_input = open_correct_sheet(
-        'school_number', 'Number:', 'What is your School ID? \n')
+        'school_number', 'Number:', 'What is your School ID? \n   ')
     user_user_input = open_correct_sheet(
-        user_school_input, 'user number', 'What is your User ID? \n')
+        user_school_input, 'user number', 'What is your User ID? \n   ')
     target_check(user_user_input, user_school_input, 'user number')
     check_assessment_info = assessment_check(
         user_user_input, user_school_input, 'user number')
