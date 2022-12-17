@@ -193,8 +193,6 @@ def assessment_check(user_input, sheet_name, field_name):
             check = True
         else:
             print('Please enter either 1 for yes or 0 for no')
-    print('ere')
-    print(user_assessment_input)
     return user_assessment_input
 
 
