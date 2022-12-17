@@ -188,7 +188,6 @@ def assessment_check(user_input, sheet_name, field_name):
                         print('Score updated! \n')
                         check_two = True
                         check = True
-                        return user_assessment_input
         elif data_input == '0':
             check = True
         else:

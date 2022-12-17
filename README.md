@@ -73,7 +73,7 @@ Users of the application should be able to:
 * Navigate and click on blank to create a blank worksheet
 * Insert your data into the cells on the sheet
 
-#### API
+#### Google Drive API - to generate credentials
 * Visit [the Google Cloud Platform](https://console.cloud.google.com/getting-started) website.
 * If not already, create an account.
 * Select 'Select a project'
@@ -98,7 +98,18 @@ No, I am not using them
 * In the role dropdown, select 'Basic' then 'Editor'
 * Click 'continue'
 * Then click 'done'
+* In the 'Credentials' tab, navigate to the Service Account that is created
+* Then click on 'Keys'
+* Navigate and click on 'Add Key'
+* Choose 'Create New Key'
+* Select 'JSON' (recommended)
+* Credentials are downloaded on your device.
+* Copy file into your GitPod editor for this particular project
+* Rename to creds.json
+* In .gitignore add this file name
 
+#### Google Sheets API
+* In 
 ## Credits
 In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
 
