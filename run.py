@@ -205,7 +205,7 @@ def new_grade_aim(user_input, sheet_name):
         for value in user.values():
             if str(value) == user_input:
                 current_user = user
-    if current_user['6'] != '':
+    if current_user['6'] == '':
         return
     else:
         student_values_dict = current_user.values()

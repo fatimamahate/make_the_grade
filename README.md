@@ -33,8 +33,9 @@ Users of the application should be able to:
 
 ## Features
 1. A welcome message to user.
-    1. Asks user for School ID
-    2. Asks user for User ID
+    1. Asks user for School ID - A thank you message pops up for correct id
+    2. Asks user for User ID - 
+2. 
 ## Design
 
 ## Technologies Used
