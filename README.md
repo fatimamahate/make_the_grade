@@ -32,7 +32,9 @@ Users of the application should be able to:
 * Find out if they have reached/exceeded target.
 
 ## Features
-
+1. A welcome message to user.
+    1. Asks user for School ID
+    2. Asks user for User ID
 ## Design
 
 ## Technologies Used
@@ -115,8 +117,9 @@ No, I am not using them
     * Click on 'Enable'
 
 ## Credits
-In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
+* In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data.
+* Love Sandwiches was also important to the understanding of this project.
+
 
 ## Acknowledgements
 Thank you to my mentor, Brian Macharia, who provided invaluable, constructive feedback on this PP3 project. 
-Also, thank you to Anna Greaves from Code Institute for her Love Sandwiches project, which allowed me to learn so much about python.
