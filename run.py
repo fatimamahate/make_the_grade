@@ -216,8 +216,6 @@ def new_grade_aim(assessment_number, user_input, sheet_name):
             for value in user.values():
                 if str(value) == user_input:
                     current_user = user
-                    print(current_user)
-                    break
         student_values_dict = current_user.values()
         student_values_list = list(student_values_dict)
         student_values_list.reverse()
