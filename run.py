@@ -257,7 +257,7 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
 
 def main():
     """
-    Main function where
+    Main function where everything is run
     """
     user_school_input = open_correct_sheet(
         'school_number', 'Number:', 'What is your School ID? \n')
