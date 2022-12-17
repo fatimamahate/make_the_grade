@@ -103,10 +103,10 @@ def assessment_check(user_input, sheet_name, field_name):
                 break
     check = False
     while not check:
-        data_input = input('Are you adding a score? (Press 1 for yes and 0 '
+        data_input = input('\n Are you adding a score? (Press 1 for yes and 0 '
                            'for no) \n Please note that you cannot add a '
                            'score once all 6 assessments have been '
-                           'completed.\n')
+                           'completed.\n   ')
         if data_input == '1':
             user_assessment_input = input('What assessment number is this?'
                                           ' (Assessment 1 to 6) '
@@ -130,7 +130,7 @@ def assessment_check(user_input, sheet_name, field_name):
             user_assessment_before = int(user_assessment_input) - 1
             if user_assessment_before != 0:
                 if current_user[f'{user_assessment_before}'] == '':
-                    print(f'There is not data for {user_assessment_before}, '
+                    print(f'There is no data for {user_assessment_before}, '
                           'are you sure this assessment number is correct? '
                           'Try again \n')
                     continue
