@@ -200,15 +200,15 @@ def new_grade_aim(assessment_number, user_input, sheet_name):
     The new_grade_aim function takes the users data from assessment 1 up to 6
     and finds the average grade
     """
-    if assessment_number is None:
+    correct_sheet = SHEET.worksheet(sheet_name)
+    sheet_info = correct_sheet.get_all_records()
+    for user in sheet_info:
+        for value in user.values():
+            if str(value) == user_input:
+                current_user = user
+    if current_user['6'] != '':
         return
     else:
-        correct_sheet = SHEET.worksheet(sheet_name)
-        sheet_info = correct_sheet.get_all_records()
-        for user in sheet_info:
-            for value in user.values():
-                if str(value) == user_input:
-                    current_user = user
         student_values_dict = current_user.values()
         student_values_list = list(student_values_dict)
         student_values_list.reverse()
