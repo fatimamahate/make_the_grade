@@ -35,8 +35,7 @@ def open_correct_sheet(sheet_name, field_name, input_question):
             for school in sheet_info:
                 for value in school.values():
                     if str(value) == user_str:
-                        print(school)
-            print('Thank you for the correct ID \n')
+                        print('Thank you for the correct ID \n')
             check = True
     return user_input
 
