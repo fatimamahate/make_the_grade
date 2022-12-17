@@ -6,25 +6,25 @@
 
 Make The Grade is an application useful for students and teachers. Students (or users as in the code) can input their target grade and scores for the latest assessment. Make The Grade is designed so that students input their scores as soon as they recieve them. It allows users to look through the grades throughout the year and means they no longer have to find exam papers since all scores will be inputted. 
 
-Make The Grade is primarily for UK users, based on have 3 terms in the year and each term split in half. Each half-term may have an assessment. This can be manually changed in the Google Sheet. 
+Make The Grade is primarily for UK users, based on have 3 terms in the year and each term split in half. Each half-term may have an assessment. This can be manually changed in the Google Sheets if needed. 
 
-Teachers can also benefit, since it will reduce their workload since students are responsible for submitting scores. Students will have an overview of the assessments they have completed and can encourage students to work towards their target. The application will also encourage a sense of responsibility since grades cannot be changed by the student themselves. 
+Teachers can also benefit, since it will reduce their workload. Students are responsible for submitting scores. Students will have an overview of the assessments they have completed and it can encourage students to work towards their target. The application will also encourage a sense of responsibility since grades cannot be changed by the student themselves. 
 
-Teachers receive a School ID which is unique to that particular school. The School ID can be shared with students along with their own unique User ID. Both the School ID and User ID are meant to be kept secret so only those who schools who have 'subscribed' to the Make The Grade service can access it. Furthermore, this ensures data cannot be mixed about and people who are not 'subscribers' of the service cannot access the service with random numbers. 
+Teachers receive a School ID which is unique to that particular school. The School ID can be shared with students along with their own unique User ID. Both the School ID and User ID are meant to be kept secret so only those who are in schools who have 'subscribed' to the Make The Grade service can access it. Furthermore, this ensures data cannot be mixed about and people who are not 'subscribers' of the service cannot access the service. 
 
 All of the data regarding each student- as well as each school is stored in Google Sheets. 
 
 ## Contents
 
- * User Experience
+* User Experience
 * Pre-requisites
- * Features
- * Design
- * Technologies Used
- * Testing
- * Deployment
- * Credits
- * Acknowledgements
+* Features
+* Design
+* Technologies Used
+* Testing
+* Deployment
+* Credits
+* Acknowledgements
 
 ## User Experience
 Users of the application should be able to:
@@ -33,7 +33,7 @@ Users of the application should be able to:
 * Input target (if user hasn't already done so)
 * Check what data is already in the database
 * Input assessment data in a consecutive manner
-* Find out if they have reached/exceeded target.
+* Find out if they have met/exceeded target or if they haven't reached target.
 
 ## Pre-requisites
 * It is expected from the user that they will be aware of any ID's before they are able to essentially log in to use the system. 
@@ -41,8 +41,8 @@ Users of the application should be able to:
 
 ## Features
 1. It begins with a welcome message to user.
-    1. Asks user for School ID - A thank you message pops up for correct id
-    2. Asks user for User ID - A thank you message pops up for correct id and id for the user
+    1. A question which asks user for School ID - A thank you message pops up for correct id
+    2. A question which asks user for User ID - A thank you message pops up for correct id and id for the user
     ![School ID](./documentation/FEATURE_1.png)
 
         ![User ID](./documentation/FEATURE_2.png)
@@ -62,7 +62,7 @@ Users of the application should be able to:
 
 5. User is then asked what the grade is.
 
-6. Then the grade is updated and the new data is shown. User is thanked for using the app.
+6. Then the grade is updated on the sheet and the new data is shown. User is thanked for using the app.
 ![Thank you message](./documentation/FEATURE_3.png)
 
     ![Steps 2 - 6](./documentation/FEATURE_7.png)
