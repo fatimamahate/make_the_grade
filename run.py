@@ -60,8 +60,9 @@ def target_check(student, sheet_name, field_name):
     if target_value == '':
         check = False
         while not check:
-            user_target_input = input('What is your target % for the end of the' 
-                                    'year (Enter a percentage)? \n')
+            user_target_input = input('What is your target % for the ' 
+                                      'end of the year '
+                                      '(Enter a percentage)? \n   ').strip()
             current_user['target'] = user_target_input
             if not user_target_input.isdigit():
                 print('insert a number')
@@ -80,7 +81,7 @@ def target_check(student, sheet_name, field_name):
                 # We +2 to take into account header and index starting from 0
                 user_pos = str_values.index(f'{student}') + 2 
                 print(user_pos)
-                temp_delete = correct_sheet.delete_rows(user_pos)
+                correct_sheet.delete_rows(user_pos)
                 update_student = list(current_user.values())
                 print(update_student)
                 # In here create the a lsit of values for the current user 
@@ -88,12 +89,12 @@ def target_check(student, sheet_name, field_name):
                 correct_sheet.append_row(update_student)
                 print('Target updated! \n')
                 print(f'You need to achieve at least {user_target_input}%'
-                        'on each assessment')
+                      'on each assessment')
                 check = True
                 break       
 
            
-def assessment_check(user_input,sheet_name,field_name):
+def assessment_check(user_input, sheet_name, field_name):
     """
     This function will ask user to input their score for a specific assessment 
     number
@@ -108,17 +109,22 @@ def assessment_check(user_input,sheet_name,field_name):
                 current_user = school
                 print(current_user)
                 break
-    check=False
+    check = False
     while not check:
-        user_assessment_no_input = input('What assessment number is this? \n')
+        user_assessment_no_input = input('What assessment number '
+                                         'is this? \n   ').strip()
         if not user_assessment_no_input.isdigit():
             print('Insert a number')
             continue
-        elif int(user_assessment_no_input) >6 or int(user_assessment_no_input)<1:
+        elif int(
+                user_assessment_no_input) > 6 or int(
+                                                    user_assessment_no_input
+                                                    ) < 1:
             print('Insert a number from 1 to 6')
             continue
         elif current_user[f'{user_assessment_no_input}'] != '':
-            print('This assessment already has data inputted. Please try again.')
+            print('This assessment already has data inputted. '
+                  'Please try again.')
             continue
         else:
             print('Thank you for a valid assessment number \n')
@@ -126,38 +132,45 @@ def assessment_check(user_input,sheet_name,field_name):
         user_assessment_before = int(user_assessment_no_input) - 1
         if user_assessment_before != 0:
             if current_user[f'{user_assessment_before}'] == '':
-                print(f'There is not data for {user_assessment_before}, are you'
-                      ' sure this assessment number is correct? Try again \n')
+                print(f'There is not data for {user_assessment_before}, '
+                      'are you sure this assessment number is correct? '
+                      'Try again \n')
                 continue
             else:
                 check_two = False
                 while not check_two:
-                    user_score_input = input('What is your score (out of 100)? \n')
+                    user_score_input = input('What is your score '
+                                             '(out of 100)? \n   ').strip()
                     if not user_score_input.isdigit():
                         print('Please insert a number \n')
                         continue
-                    elif int(user_score_input) > 100 or int(user_score_input) < 0:
+                    elif int(
+                            user_score_input) > 100 or int(
+                                                           user_score_input
+                                                            ) < 0:
                         print('Please insert a valid score \n')
                     else:
-                        current_user[f'{user_assessment_no_input}'] = user_score_input
+                        current_user[
+                            f'{user_assessment_no_input}'
+                                    ] = user_score_input
                         print('Updating grade...\n')
                         no_of_rows = len(sheet_info)
                         print(no_of_rows)
-                        user_pos=str_values.index(f'{user_input}') + 2 
-                        #We +2 to take into account header and index starting 
-                        #from 0
+                        user_pos = str_values.index(f'{user_input}') + 2 
+                        # We +2 to take into account header and index starting 
+                        # from 0
                         print(user_pos)
-                        temp_delete = correct_sheet.delete_rows(user_pos)
+                        correct_sheet.delete_rows(user_pos)
                         update_student = list(current_user.values())
                         print(update_student)
                         correct_sheet.append_row(update_student)
                         print(current_user)
                         print('Grade updated! \n')
-                        check_two=True
-                        check=True
+                        check_two = True
+                        check = True
         else:
-            #if user inputs 1, then no need to check any other data has been 
-            #written previously
+            # if user inputs 1, then no need to check any other data has been 
+            # written previously
             check_two = False
             while not check_two:
                 user_score_input = input('What is your score (out of 100)? \n')
@@ -167,22 +180,26 @@ def assessment_check(user_input,sheet_name,field_name):
                 elif int(user_score_input) > 100 or int(user_score_input) < 0:
                     print('Please insert a valid score')
                 else:
-                    current_user[f'{user_assessment_no_input}'] = user_score_input
+                    current_user[
+                        f'{user_assessment_no_input}'
+                                ] = user_score_input
                     print('Updating target...\n')
                     no_of_rows = len(sheet_info)
                     print(no_of_rows)
-                    user_pos=str_values.index(f'{user_input}') + 2 
-                    #We +2 to take into account header and index starting from 0
+                    user_pos = str_values.index(f'{user_input}') + 2 
+                    # We +2 to take into account header and index starting 
+                    # from 0
                     print(user_pos)
-                    temp_delete = correct_sheet.delete_rows(user_pos)
+                    correct_sheet.delete_rows(user_pos)
                     update_student = list(current_user.values())
                     print(update_student)
                     correct_sheet.append_row(update_student)
                     print(current_user)
                     print('Grade updated! \n')
-                    check_two=True
-                    check=True
+                    check_two = True
+                    check = True
     return user_assessment_no_input
+
 
 def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
     """
@@ -227,28 +244,21 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
         elif average > current_user['target']:
             print('You have exceed the target! Well done!')
         else: 
-            print('You have not reached the target yet, try again next year \n')
+            print('You have not reached the target yet, '
+                  'try again next year \n')
     else:
         if average == current_user['target']:
             print('Well done, you\'ve acheived you\'re target')
         elif average > current_user['target']:
-            print('You have exceed the target! Keep it up')
-        
-        
-
+            print('You have exceed the target! Keep it up')    
     print(average)
     print(current_user['target'])
 
 
-        
-    
-"""
-TO-DO
-take out all useless print values
-clean up any print values by adding \n
-add below into its own function and run function
-"""
 def main():
+    """
+    Main function where
+    """
     user_school_input = open_correct_sheet(
         'school_number', 'Number:', 'What is your School ID? \n')
     user_user_input = open_correct_sheet(
@@ -256,6 +266,9 @@ def main():
     target_check(user_user_input, user_school_input, 'user number')
     check_assessment_info = assessment_check(
         user_user_input, user_school_input, 'user number')
-    new_grade_aim(check_assessment_info, user_user_input, user_school_input, 'user number')
+    new_grade_aim(
+        check_assessment_info, user_user_input, 
+        user_school_input, 'user number')
+
 
 main()
