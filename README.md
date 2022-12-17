@@ -84,9 +84,11 @@ Users of the application should be able to:
 
 ## Testing
 ### Validation Testing
-* Validation for PEP8 has passed.
+* Validation for PEP8 has passed and any errors have been rectified.
 
 ![PEP8](./documentation/VALIDATION.png)
+
+
 
 * Manual tests
     * The following images show the tests carried out
