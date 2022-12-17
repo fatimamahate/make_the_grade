@@ -199,13 +199,7 @@ def assessment_check(user_input, sheet_name, field_name):
 def new_grade_aim(assessment_number, user_input, sheet_name):
     """
     The new_grade_aim function takes the users data from assessment 1 up to 6
-    and finds the average grade so far
-    Then it calculates, how much you need for the next assessment to reach
-    target if the last assessment is not the sixth one.
-    If it is, then just calculate the average.
-    If the average is less than target, a message says try again next year!
-    If it meets target, a message says well done for reaching target!
-    If it exceeds target, a message says well done for exceed target!
+    and finds the average grade
     """
     if assessment_number is None:
         return
@@ -236,29 +230,6 @@ def new_grade_aim(assessment_number, user_input, sheet_name):
             else:
                 print('You have not reached the target yet, '
                       'try again next year \n')
-        else:
-            if average == current_user['target']:
-                print('Well done, you\'ve acheived you\'re target \n')
-            elif average > current_user['target']:
-                print('You have exceed the target! Keep it up \n')
-            else:
-                assessment_remain = 0
-                assessment_complete_score = 0
-                assessment_complete = 0
-                for i in student_values:
-                    if i == '':
-                        assessment_remain += 1
-                    else:
-                        assessment_complete_score += int(i)
-                        assessment_complete += 1
-                new_aim = (
-                        current_user[
-                                    'target'
-                                    ] * 6 - assessment_complete_score
-                            )/assessment_remain
-                if int(new_aim) > 100:
-                    print('Try your best to improve your grade'
-                          ' for the next assessment')
 
 
 def data_check(user_input, sheet_name):
