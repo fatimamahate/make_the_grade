@@ -109,7 +109,11 @@ No, I am not using them
 * In .gitignore add this file name
 
 #### Google Sheets API
-* In 
+* On the same website as above
+    * In the search bar, search for 'Google Sheets'
+    * Select 'Google Sheets API'
+    * Click on 'Enable'
+
 ## Credits
 In order to amend data for a specific student, I temporarily [deleted](https://itecnote.com/tecnote/python-how-to-delete-remove-row-from-the-google-spreadsheet-using-gspread-lib-in-python/) the row and rejoined at the end of the table with the new data. 
 
