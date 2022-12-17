@@ -4,7 +4,11 @@
 
 * [Repository Link](https://github.com/fatimamahate/make_the_grade)
 
-Make The Grade is an application useful for students and teachers. Students (or users as in the code) can input their target grade and scores for the latest assessment. Make The Grade is designed so that students input their scores as soon as they recieve them. The application can (if needed for user) work out the average score needed on each remaining exam to meet their target score. This is especially useful for students working below their average grade. 
+Make The Grade is an application useful for students and teachers. Students (or users as in the code) can input their target grade and scores for the latest assessment. Make The Grade is designed so that students input their scores as soon as they recieve them. It allows users to look through the grades throughout the year and means they no longer have to find exam papers since all scores will be inputted. 
+
+Make The Grade is primarily for UK users, based on have 3 terms in the year and each term split in half. Each half-term may have an assessment. This can be manually changed in the Google Sheet. 
+
+Teachers can also benefit, since it will reduce their workload since students are responsible for submitting scores. Students will have an overview of the assessments they have completed and can encourage students to work towards their target. The application will also encourage a sense of responsibility since grades cannot be changed by the student themselves. 
 
 Teachers receive a School ID which is unique to that particular school. The School ID can be shared with students along with their own unique User ID. Both the School ID and User ID are meant to be kept secret so only those who schools who have 'subscribed' to the Make The Grade service can access it. Furthermore, this ensures data cannot be mixed about and people who are not 'subscribers' of the service cannot access the service with random numbers. 
 
@@ -13,6 +17,7 @@ All of the data regarding each student- as well as each school is stored in Goog
 ## Contents
 
  * User Experience
+* Pre-requisites
 * Features
 * Design
  * Technologies Used
@@ -28,14 +33,16 @@ Users of the application should be able to:
 * Input target (if user hasn't already done so)
 * Check what data is already in the database
 * Input assessment data in a consecutive manner
-* Find out how much they need iin each of the remaining exams to reach target. 
 * Find out if they have reached/exceeded target.
 
 ## Features
-1. A welcome message to user.
+1. It begins with a welcome message to user.
     1. Asks user for School ID - A thank you message pops up for correct id
-    2. Asks user for User ID - A thank you message pops up for correct id
-2. 
+    2. Asks user for User ID - A thank you message pops up for correct id and id for the user
+2. User is asked if they are adding an assessment score or if they are simply viewing the grades they have. 
+    1. User clicks 1 - they would like to add a score
+    2. User clicks 2 - they would like to view their data 
+3. 
 ## Design
 
 ## Technologies Used
