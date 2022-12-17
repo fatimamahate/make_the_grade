@@ -47,16 +47,16 @@ def target_check(student, sheet_name, field_name):
     sheet_info = correct_sheet.get_all_records()
     str_values = [str(record[field_name]) for record in sheet_info]
     print(str_values)
-    for school in sheet_info:
-        for value in school.values():
+    for user in sheet_info:
+        for value in user.values():
             if str(value) == student:
-                current_user = school
-                print(current_user)
+                current_user = user
+                print('Check')
                 break
     target_value = current_user['target']
-    print('check')
     print(current_user)
-    print('check')
+    print(target_value)
+    print('THIS')
     if target_value == '':
         check = False
         while not check:
@@ -103,11 +103,12 @@ def assessment_check(user_input, sheet_name, field_name):
     sheet_info = correct_sheet.get_all_records()
     str_values = [str(record[field_name]) for record in sheet_info]
     print(str_values)
-    for school in sheet_info:
-        for value in school.values():
+    for user in sheet_info:
+        for value in user.values():
             if str(value) == user_input:
-                current_user = school
+                current_user = user
                 print(current_user)
+                print('check2')
                 break
     check = False
     while not check:
@@ -216,10 +217,10 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
     sheet_info = correct_sheet.get_all_records()
     str_values = [str(record[field_name]) for record in sheet_info]
     print(str_values)
-    for school in sheet_info:
-        for value in school.values():
+    for user in sheet_info:
+        for value in user.values():
             if str(value) == user_input:
-                current_user = school
+                current_user = user
                 print(current_user)
                 break
     student_values_dict = current_user.values()
@@ -269,18 +270,48 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
                       ' for the next assessment')
 
 
+def data_check(user_input, field_name, sheet_name):
+    """
+    This function prints the data we currently have for user
+    """
+    correct_sheet = SHEET.worksheet(sheet_name)
+    sheet_info = correct_sheet.get_all_records()
+    str_values = [str(record[field_name]) for record in sheet_info]
+    print(str_values)
+    for current_user in sheet_info:
+        for value in current_user.values():
+            if str(value) == user_input:
+                name = current_user['name']
+                print(f'The data we currently have for {name} is ...')
+                print(current_user)
+                print('ere')
+                break
+    if current_user['6'] != '':
+        print('Thank you for using Make The Grade.')
+        return
+
+
 def main():
     """
     Main function where everything is run
     """
     print('Welcome to Make The Grade!!')
+    
     user_school_input = open_correct_sheet(
         'school_number', 'Number:', 'What is your School ID? \n   ')
+
     user_user_input = open_correct_sheet(
         user_school_input, 'user number', 'What is your User ID? \n')
+
     target_check(user_user_input, user_school_input, 'user number')
+    
+    data_check(user_user_input, 'user number', user_school_input)
+
     check_assessment_info = assessment_check(
         user_user_input, user_school_input, 'user number')
+
+    data_check(user_user_input, 'user number', user_school_input)
+
     new_grade_aim(
         check_assessment_info, user_user_input, 
         user_school_input, 'user number')
