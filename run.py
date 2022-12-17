@@ -61,17 +61,17 @@ def target_check(student, sheet_name, field_name):
         check = False
         while not check:
             user_target_input = input('What is your target % for the ' 
-                                      'end of the year '
-                                      '(Enter a percentage)? \n   ').strip()
+                                      'end of the year (Whole number ' 
+                                      'out of 100)? \n   ').strip()
             current_user['target'] = user_target_input
             if not user_target_input.isdigit():
-                print('insert a number')
+                print('Please insert a valid, whole number')
                 continue
             elif int(user_target_input) <= 0:
-                print('Minimum target is 1% try again \n')
+                print('The minimum target is 1%, try again \n')
                 continue
             elif int(user_target_input) > 100:
-                print('Target cannot be larger than 100% try again \n')
+                print('The Target cannot be larger than 100%, try again \n')
                 continue
             else:
                 print('Updating target...\n')
@@ -111,10 +111,10 @@ def assessment_check(user_input, sheet_name, field_name):
                 break
     check = False
     while not check:
-        user_assessment_no_input = input('What assessment number '
-                                         'is this? \n   ').strip()
+        user_assessment_no_input = input('What assessment number is this?'
+                                         ' (Assessment 1 to 6) \n   ').strip()
         if not user_assessment_no_input.isdigit():
-            print('Insert a number')
+            print('Insert a valid, whole number')
             continue
         elif int(
                 user_assessment_no_input) > 6 or int(
@@ -265,16 +265,19 @@ def new_grade_aim(assessment_number, user_input, sheet_name, field_name):
                         current_user['target'] * 6 - assessment_complete_score
                         )/assessment_remain
             if int(new_aim) > 100:
+                print('Try your best to improve your grade' 
+                      ' for the next assessment')
 
 
 def main():
     """
     Main function where everything is run
     """
+    print('Welcome to Make The Grade!!')
     user_school_input = open_correct_sheet(
         'school_number', 'Number:', 'What is your School ID? \n   ')
     user_user_input = open_correct_sheet(
-        user_school_input, 'user number', 'What is your User ID? \n   ')
+        user_school_input, 'user number', 'What is your User ID? \n')
     target_check(user_user_input, user_school_input, 'user number')
     check_assessment_info = assessment_check(
         user_user_input, user_school_input, 'user number')
