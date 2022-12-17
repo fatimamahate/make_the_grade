@@ -1,4 +1,4 @@
-<h1 align="center">Make The Grade</h1>
+<h1>Make The Grade</h1>
 
 * [Live project link](https://make-the-grade.herokuapp.com/)
 
@@ -18,10 +18,10 @@ All of the data regarding each student- as well as each school is stored in Goog
 
  * User Experience
 * Pre-requisites
-* Features
-* Design
+ * Features
+ * Design
  * Technologies Used
-* Testing
+ * Testing
  * Deployment
  * Credits
  * Acknowledgements
@@ -35,20 +35,66 @@ Users of the application should be able to:
 * Input assessment data in a consecutive manner
 * Find out if they have reached/exceeded target.
 
+## Pre-requisites
+* It is expected from the user that they will be aware of any ID's before they are able to essentially log in to use the system. 
+* The 'log in' details as well as a link to the Make The Grade database can be found in the additional notes of submission form. 
+
 ## Features
 1. It begins with a welcome message to user.
     1. Asks user for School ID - A thank you message pops up for correct id
     2. Asks user for User ID - A thank you message pops up for correct id and id for the user
-2. User is asked if they are adding an assessment score or if they are simply viewing the grades they have. 
+    ![School ID](./documentation/FEATURE_1.png)
+
+        ![User ID](./documentation/FEATURE_2.png)
+
+2. If user has no target, the user is asked to input a target grade. This updates the datasheet also. 
+
+3. User is then asked if they are adding an assessment score or if they are simply viewing the grades they have. 
     1. User clicks 1 - they would like to add a score
-    2. User clicks 2 - they would like to view their data 
-3. 
+    2. User clicks 2 - they would like to view their data and data is shown
+    ![View/Score question and target](./documentation/FEATURE_6.png)
+
+        ![View/Score question](./documentation/FEATURE_4.png)
+
+        ![Display Data](./documentation/FEATURE_8.png)
+
+4. Data is shown -if user clicked 1, then user will be asked what assessment number it is. 
+
+5. User is then asked what the grade is.
+
+6. Then the grade is updated and the new data is shown. User is thanked for using the app.
+![Thank you message](./documentation/FEATURE_3.png)
+
+    ![Steps 2 - 6](./documentation/FEATURE_7.png)
+
+7. If all six assessments are complete, user can see if they have exceeded/met/missed out on target. 
+![School ID](./documentation/FEATURE_5.png)
+
+### Future
+* It would be useful to add a feature which allows users to predict what they would achieve if they continued at the same grade.
+* It would also be useful to show the user how much they will require to exceed the target by rounding their target up (like ceil()). 
+
 ## Design
+* A very basic flowchart was used to see how the application could work. 
+![Basic Flowchart](./documentation/BASIC_FLOWCHART.png)
+* As the design went on further, seemingly minor things were more important such as a space between print statements.
 
 ## Technologies Used
 * [Python](https://www.python.org/)
 
 ## Testing
+### Validation Testing
+* Validation for PEP8 has passed.
+
+![PEP8](./documentation/VALIDATION.png)
+
+* Manual tests
+    * The following images show the tests carried out
+
+![Manual Test 1](./documentation/TEST_IMG_1.png)
+![Manual Test 2](./documentation/TEST_IMG_2.png)
+
+* The application was tested on both Google Chrome and Internet Edge without any faults.
 
 ## Deployment
 ### Clone a repository
