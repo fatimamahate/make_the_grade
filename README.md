@@ -76,6 +76,7 @@ Users of the application should be able to:
 
 ## Design
 * A very basic flowchart was used to see how the application could work. 
+    * Please look through Flowchart.pdf
 ![Basic Flowchart](./documentation/BASIC_FLOWCHART.png)
 * As the design went on further, seemingly minor things were more important such as a space between print statements.
 
@@ -92,6 +93,7 @@ Users of the application should be able to:
 
 * Manual tests
     * The following images show the tests carried out
+        * Please look through Testing.pdf
 
 ![Manual Test 1](./documentation/TEST_IMG_1.png)
 ![Manual Test 2](./documentation/TEST_IMG_2.png)
